@@ -60,7 +60,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 			// fmt.Println("Redirect " + remoteUrl + "\n")
 			// Redirect relative path /example.com/about
-			http.Redirect(w, r, remoteUrl, 302)
+			http.Redirect(w, r, remoteUrl, http.StatusFound)
 			return
 		}
 
@@ -100,7 +100,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-
 	// https://localhost:8080/
 	// https://localhost:8080/example.com
 	// https://localhost:8080/example.com/about
